@@ -1,112 +1,573 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
+  <title>Bruno Akpakpo — Generative AI for Work &amp; Research</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bruno Akpakpo — Generative AI for Work & Research</title>
-  <meta name="description" content="One‑page portfolio for the Generative AI for Work & Research course. Sections: About me, About the course, Weekly submissions." />
+  <meta name="robots" content="index,follow">
+  <meta name="generator" content="GrapesJS Studio">
+  <meta name="description"
+    content="One‑page portfolio for the Generative AI for Work & Research course. Sections: About me, About the course, Weekly submissions." />
   <style>
-    :root{
-      --bg: #ffffff; --bg-soft:#f6f7fb; --text:#0f172a; --muted:#475569; --card:#ffffff; --border:#e2e8f0; --brand:#4f46e5; --brand-2:#7c3aed;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    :root {
+      --gjs-t-color-primary: #cf549e;
+      --gjs-t-color-secondary: #b9227d;
+      --gjs-t-color-accent: #ffb347;
+      --gjs-t-color-success: #28a745;
+      --gjs-t-color-warning: #ffc107;
+      --gjs-t-color-error: #dc3545;
+      --bg: #ffffff;
+      --bg-soft: #f6f7fb;
+      --text: #0f172a;
+      --muted: #475569;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --brand: #4f46e5;
+      --brand-2: #7c3aed;
       --shadow: 0 10px 30px rgba(2, 6, 23, .08);
     }
-    [data-theme="dark"]{
-      --bg:#0b1220; --bg-soft:#0f172a; --text:#e2e8f0; --muted:#94a3b8; --card:#0f172a; --border:#1f2937; --shadow: 0 10px 30px rgba(0,0,0,.45);
+
+    body {
+      background-color: #e7e7e7;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
     }
-    html { scroll-behavior: smooth; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--text); }
-    .container{ max-width:1100px; margin:0 auto; padding:0 16px; }
-    .header{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid var(--border); background:color-mix(in oklab, var(--bg), transparent 30%); }
-    .nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0; }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .logo{ width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:var(--shadow); }
-    .tabs{ display:none; gap:6px; padding:4px; border:1px solid var(--border); border-radius:14px; background:var(--bg-soft); }
-    .tab{ padding:8px 12px; border-radius:10px; font-size:14px; color:var(--muted); text-decoration:none; }
-    .tab.active{ background:var(--bg); color:var(--text); box-shadow:var(--shadow); }
-    .btn{ appearance:none; border:1px solid var(--border); background:var(--bg); color:var(--text); padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer; }
-    .btn[disabled]{ opacity:.6; cursor:not-allowed; }
 
-    @media (min-width: 768px){ .tabs{ display:flex; } }
+    .head {
+      padding: 50px 50px 35px;
+    }
 
-    /* Hero */
-    .hero{ position:relative; overflow:hidden; }
-    .halo{ position:absolute; inset:0; background:radial-gradient(70% 40% at 50% 0%, color-mix(in oklab, var(--brand) 35%, transparent), transparent); opacity:.25; pointer-events:none; }
-    .hero-grid{ display:grid; grid-template-columns:1fr; gap:28px; padding:56px 0; }
-    @media (min-width: 900px){ .hero-grid{ grid-template-columns:1.1fr .9fr; padding:84px 0; gap:36px; } }
-    .pill{ display:inline-flex; align-items:center; gap:8px; font-size:12px; padding:6px 10px; border-radius:999px; color:#fff; background:linear-gradient(135deg, var(--brand), var(--brand-2)); }
-    .h1{ font-size:40px; line-height:1.1; font-weight:800; letter-spacing:-.02em; margin:14px 0 6px; }
-    @media (min-width: 900px){ .h1{ font-size:54px; } }
-    .lead{ color:var(--muted); font-size:18px; }
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .chip{ background:var(--bg-soft); border:1px solid var(--border); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px; }
+    .logo {
+      height: 36px;
+      display: block;
+      margin: 0 auto;
+      width: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+    }
 
-    .card{ background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow); }
-    .grid-2{ display:grid; grid-template-columns:1fr; gap:16px; }
-    @media (min-width: 820px){ .grid-2{ grid-template-columns:1fr 1fr; } }
+    .card {
+      max-width: 700px;
+      padding: 18px;
+      background-color: white;
+      border-radius: 18px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
 
-    .stack{ padding:56px 0; }
-    .section-title{ font-size:28px; font-weight:800; margin:0; }
-    .section-sub{ color:var(--muted); margin-top:6px; }
+    .title {
+      margin: 0;
+      text-align: center;
+    }
 
-    .kpis{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
-    @media (min-width: 640px){ .kpis{ grid-template-columns:repeat(3, 1fr);} }
-    .kpi{ display:flex; gap:10px; }
-    .kpi .dot{ margin-top:8px; width:8px; height:8px; border-radius:50%; background:var(--brand); }
+    .gjs-t-body {
+      background-color: inherit;
+      color: inherit;
+      font-size: 1rem;
+      line-height: 1.75rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    .list{ margin:10px 0 0 0; padding:0 0 0 18px; color:var(--muted); }
-    .list li{ margin:6px 0; }
+    .subtitle {
+      text-align: center;
+      margin: 0;
+      padding: 25px 0;
+    }
 
-    /* Weeks */
-    .weeks{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:18px; }
-    @media (min-width: 720px){ .weeks{ grid-template-columns:repeat(2, 1fr);} }
-    @media (min-width: 1024px){ .weeks{ grid-template-columns:repeat(3, 1fr);} }
-    .week h4{ margin:6px 0 0; font-size:18px; }
-    .muted{ color:var(--muted); }
+    .paragraph {
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
 
-    footer{ border-top:1px solid var(--border); padding:22px 0 40px; color:var(--muted); font-size:14px; }
+    .link {
+      color: #af4e8a;
+      text-decoration: none;
+      font-size: 13px;
+    }
 
-    /* Anchor offset */
-    section{ scroll-margin-top:80px; }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .gjs-t-h1 {
+      color: var(--gjs-t-color-secondary);
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+    .button {
+      display: block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      border-width: 0;
+    }
+
+    .gjs-t-h2 {
+      color: #601843;
+      font-size: 1.2rem;
+      line-height: 1.75rem;
+    }
+
+    .gjs-t-button {
+      background-color: var(--gjs-t-color-primary);
+      color: white;
+      border-radius: 0.3rem;
+    }
+
+    .gjs-t-link {
+      color: var(--gjs-t-color-primary);
+      text-decoration: underline;
+    }
+
+    .gjs-t-border {
+      border-radius: 0.3rem;
+      border-color: #e0e0e0;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1220;
+      --bg-soft: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card: #0f172a;
+      --border: #1f2937;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .45);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in oklab, var(--bg), transparent 30%);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tabs {
+      display: none;
+      gap: 6px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+    }
+
+    .tab {
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .tab.active {
+      background: var(--bg);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn[disabled] {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .halo {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(70% 40% at 50% 0%, color-mix(in oklab, var(--brand) 35%, transparent), transparent);
+      opacity: .25;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 56px 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+
+    .h1 {
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin: 14px 0 6px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .stack {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .kpi {
+      display: flex;
+      gap: 10px;
+    }
+
+    .kpi .dot {
+      margin-top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .list {
+      margin: 10px 0 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin: 6px 0;
+    }
+
+    .weeks {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .week h4 {
+      margin: 6px 0 0;
+      font-size: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    #ig7mi {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--muted);
+    }
+
+    #i6plb {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+
+    #ihu42 {
+      font-size: 12px;
+    }
+
+    #iw1nh {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    #iif8b {
+      margin-top: 16px;
+    }
+
+    #iqi05z {
+      font-size: 14px;
+    }
+
+    #ivp8en {
+      font-size: 14px;
+    }
+
+    #iakidc {
+      font-size: 14px;
+    }
+
+    #i5yjx5 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    #i4mzf6 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    #i4drh4 {
+      font-size: 14px;
+    }
+
+    #i8q4u2 {
+      font-size: 14px;
+    }
+
+    #i2wdkf {
+      font-size: 13px;
+    }
+
+    #ilolsd {
+      font-size: 13px;
+    }
+
+    #i0595m {
+      font-size: 13px;
+    }
+
+    #i1lyll {
+      margin-top: 18px;
+    }
+
+    #isx81n {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    #itzgx4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #iw0st2 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #i4xcne {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #i056hn {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #i5yxzk {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #ip5ebr {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #iv1rgh {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #inu02g {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    #iury34 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    @media (min-width: 640px) {
+      .kpis {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .weeks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .tabs {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 820px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.1fr .9fr;
+        padding: 84px 0;
+        gap: 36px;
+      }
+
+      .h1 {
+        font-size: 54px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .weeks {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   </style>
 </head>
-<body>
-  <header class="header" role="banner">
-    <div class="container nav" aria-label="Main navigation">
+
+<body class="gjs-t-body">
+  <header role="banner" class="header">
+    <div aria-label="Main navigation" class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div aria-hidden="true" class="logo"></div>
         <div>
-          <div style="font-size:12px; text-transform:uppercase; letter-spacing:.2em; color:var(--muted);">Portfolio</div>
-          <strong>Dr Bruno Akpakpo</strong>
+          <div id="ig7mi">Portfolio</div><strong>Dr Bruno Akpakpo</strong>
         </div>
       </div>
-      <nav class="tabs" id="tabs">
-        <a class="tab" href="#about">About me</a>
-        <a class="tab" href="#course">About the course</a>
-        <a class="tab" href="#submissions">Weekly submissions</a>
-      </nav>
-      <button class="btn" id="toggle-theme" aria-label="Toggle dark mode">Dark mode</button>
+      <nav id="tabs" class="tabs"><a href="#about" class="tab">About me</a><a href="#course" class="tab">About the
+          course</a><a href="#submissions" class="tab">Weekly submissions</a></nav>
+      <button type="button" id="toggle-theme" aria-label="Toggle dark mode" class="btn">Dark mode</button>
     </div>
   </header>
-
   <main>
     <section class="hero">
       <div class="halo"></div>
       <div class="container hero-grid">
-        <div>
-          <span class="pill" aria-label="Course name">Generative AI for Work & Research</span>
+        <div><span aria-label="Course name" class="pill">Generative AI for Work &amp; Research</span>
           <h1 class="h1">Practical, ethical AI workflows for public health impact</h1>
-          <p class="lead">A one‑page portfolio documenting learning and artefacts from an 8‑week live cohort covering no‑code AI tools, data analysis, automation, and research communication.</p>
-          <div class="chips" aria-label="Tags">
-            <span class="chip">Program M&amp;E</span>
-            <span class="chip">Epidemiology</span>
-            <span class="chip">Surveillance &amp; HMIS</span>
-            <span class="chip">Quality Assurance</span>
-            <span class="chip">R / Stata / SPSS</span>
-            <span class="chip">AI Automation</span>
+          <p class="lead">A one‑page portfolio documenting learning and artefacts from an 8‑week live cohort covering
+            no‑code AI tools, data analysis, automation, and research communication.</p>
+          <div aria-label="Tags" class="chips">
+            <span class="chip">Program M&amp;E</span><span class="chip">Epidemiology</span><span class="chip">Surveillance &amp; HMIS</span><span class="chip">Quality Assurance</span><span class="chip">R / Stata / SPSS</span><span class="chip">AI Automation</span>
           </div>
         </div>
-        <aside class="card" aria-label="Course highlights">
-          <h3 style="margin:0 0 8px 0; font-size:18px;">Bootcamp features</h3>
+        <aside aria-label="Course highlights" class="card">
+          <h3 id="i6plb">Bootcamp features</h3>
           <div class="grid-2">
             <div>
               <ul class="list">
@@ -124,38 +585,39 @@
               </ul>
             </div>
           </div>
-          <div class="card" style="margin-top:16px;">
-            <div class="muted" style="font-size:12px;">Grading rubric</div>
+          <div class="card" id="iif8b">
+            <div class="muted" id="ihu42">Grading rubric</div>
             <ul class="list">
               <li>Online quizzes — <strong>15%</strong></li>
               <li>Workshop assignments — <strong>35%</strong></li>
               <li>Attendance &amp; participation — <strong>10%</strong></li>
               <li>Final project — <strong>40%</strong></li>
             </ul>
-            <div class="muted" style="font-size:12px; margin-top:6px;">Passing grade: 80%</div>
+            <div class="muted" id="iw1nh">Passing grade: 80%</div>
           </div>
         </aside>
       </div>
-    </section>
-
-    <!-- About me -->
+    </section><!-- About me -->
     <section id="about" class="stack">
       <div class="container">
-        <div style="display:grid; grid-template-columns:1fr; gap:24px; align-items:start;">
+        <div id="i4mzf6">
           <div>
             <h2 class="section-title">About me</h2>
             <p class="section-sub">MD, MPH • Geneva, Switzerland</p>
           </div>
-          <div style="display:grid; grid-template-columns:1fr; gap:18px;">
+          <div id="i5yjx5">
             <p>
-              Public Health &amp; Monitoring/Evaluation specialist with experience across HIV, TB and malaria programs, health systems strengthening, and community health. Currently supporting results‑driven RSSH investments across African portfolios at the Global Fund.
+              Public Health &amp; Monitoring/Evaluation specialist with experience across HIV, TB and malaria programs,
+              health systems strengthening, and community health. Currently supporting results‑driven RSSH investments
+              across African portfolios at the Global Fund.
             </p>
             <p>
-              Background in epidemiology and biostatistics; data quality reviews; surveillance and HMIS; and quality assurance of national assessments. Experienced partnering with ministries of health, NGOs and academia to design strategic plans, mobilize resources and translate data into action.
+              Background in epidemiology and biostatistics; data quality reviews; surveillance and HMIS; and quality
+              assurance of national assessments. Experienced partnering with ministries of health, NGOs and academia to
+              design strategic plans, mobilize resources and translate data into action.
             </p>
             <div class="grid-2">
-              <div class="card">
-                <strong style="font-size:14px;">Core strengths</strong>
+              <div class="card"><strong id="iqi05z">Core strengths</strong>
                 <ul class="list">
                   <li>Program M&amp;E; risk and performance reviews</li>
                   <li>Surveillance &amp; health information systems</li>
@@ -163,42 +625,46 @@
                   <li>Community &amp; health systems strengthening</li>
                 </ul>
               </div>
-              <div class="card">
-                <strong style="font-size:14px;">Tools &amp; languages</strong>
+              <div class="card"><strong id="ivp8en">Tools &amp; languages</strong>
                 <ul class="list">
                   <li>R, Stata, SPSS, EpiInfo</li>
                   <li>French (native); English (fluent)</li>
                 </ul>
               </div>
             </div>
-            <p class="muted" style="font-size:14px;">Note: This site intentionally omits direct email to reduce spam. For professional inquiries, please use your usual channels.</p>
+            <p class="muted" id="iakidc">Note: This site intentionally omits direct email to reduce spam. For
+              professional inquiries, please use your usual channels.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- About the course -->
+    </section><!-- About the course -->
     <section id="course" class="stack">
       <div class="container">
         <h2 class="section-title">About the course</h2>
-        <p class="section-sub">An 8‑week, live cohort on no‑code AI tools for work and research. Curriculum covers practical GenAI for literature &amp; text analysis, data workflows, automation, custom GPTs, and research communication.</p>
-
-        <div class="grid-2" style="margin-top:18px;">
-          <div class="card">
-            <strong style="font-size:14px;">Modules</strong>
+        <p class="section-sub">An 8‑week, live cohort on no‑code AI tools for work and research. Curriculum covers
+          practical GenAI for literature &amp; text analysis, data workflows, automation, custom GPTs, and research
+          communication.</p>
+        <div class="grid-2" id="i1lyll">
+          <div class="card"><strong id="i4drh4">Modules</strong>
             <ol class="list">
-              <li><strong>Websites, documents &amp; presentations</strong> — LLM basics; generating Markdown/LaTeX/HTML; building simple research sites; AI for scientific presentations.</li>
-              <li><strong>AI‑automated data analysis</strong> — Code Interpreter, dashboards, batch file processing, automated visualizations and reports.</li>
-              <li><strong>GenAI for research &amp; text analysis</strong> — Literature reviews; text classification; sentiment; knowledge maps; summarization pipelines.</li>
-              <li><strong>Custom GPTs and chatbots</strong> — Context windows; RAG; Botpress; integrating knowledge bases.</li>
-              <li><strong>AI for task automation</strong> — Email automations; agent‑based flows; browser control agents.</li>
-              <li><strong>GenAI for communication &amp; outreach</strong> — Figures and diagrams; video abstracts; visualization prompts; content scheduling.</li>
-              <li><strong>Capstone project &amp; showcase</strong> — Progress checks; peer feedback; presentations; public Q&amp;A.</li>
+              <li><strong>Websites, documents &amp; presentations</strong> — LLM basics; generating Markdown/LaTeX/HTML;
+                building simple research sites; AI for scientific presentations.</li>
+              <li><strong>AI‑automated data analysis</strong> — Code Interpreter, dashboards, batch file processing,
+                automated visualizations and reports.</li>
+              <li><strong>GenAI for research &amp; text analysis</strong> — Literature reviews; text classification;
+                sentiment; knowledge maps; summarization pipelines.</li>
+              <li><strong>Custom GPTs and chatbots</strong> — Context windows; RAG; Botpress; integrating knowledge
+                bases.</li>
+              <li><strong>AI for task automation</strong> — Email automations; agent‑based flows; browser control
+                agents.</li>
+              <li><strong>GenAI for communication &amp; outreach</strong> — Figures and diagrams; video abstracts;
+                visualization prompts; content scheduling.</li>
+              <li><strong>Capstone project &amp; showcase</strong> — Progress checks; peer feedback; presentations;
+                public Q&amp;A.</li>
               <li><strong>Assessment &amp; reflection</strong> — Wrap‑up and portfolio polish.</li>
             </ol>
           </div>
-          <div class="card">
-            <strong style="font-size:14px;">Cohort format</strong>
+          <div class="card"><strong id="i8q4u2">Cohort format</strong>
             <ul class="list">
               <li>8‑week live cohort</li>
               <li>Workshops + weekly help sessions</li>
@@ -206,55 +672,106 @@
               <li>Certificate on completion</li>
             </ul>
             <div class="kpis">
-              <div class="kpi"><div class="dot"></div><div>
-                <div><strong>No‑code first</strong></div>
-                <div class="muted" style="font-size:13px;">Practical tools you can use at work</div>
-              </div></div>
-              <div class="kpi"><div class="dot"></div><div>
-                <div><strong>Capstone</strong></div>
-                <div class="muted" style="font-size:13px;">Coaching + showcase</div>
-              </div></div>
-              <div class="kpi"><div class="dot"></div><div>
-                <div><strong>Lifetime access</strong></div>
-                <div class="muted" style="font-size:13px;">Tutorial library</div>
-              </div></div>
+              <div class="kpi">
+                <div class="dot"></div>
+                <div>
+                  <div><strong>No‑code first</strong></div>
+                  <div class="muted" id="i2wdkf">Practical tools you can use at work</div>
+                </div>
+              </div>
+              <div class="kpi">
+                <div class="dot"></div>
+                <div>
+                  <div><strong>Capstone</strong></div>
+                  <div class="muted" id="ilolsd">Coaching + showcase</div>
+                </div>
+              </div>
+              <div class="kpi">
+                <div class="dot"></div>
+                <div>
+                  <div><strong>Lifetime access</strong></div>
+                  <div class="muted" id="i0595m">Tutorial library</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Weekly submissions (placeholders) -->
+    </section><!-- Weekly submissions (placeholders) -->
     <section id="submissions" class="stack">
       <div class="container">
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div id="isx81n">
           <div>
             <h2 class="section-title">My weekly submissions</h2>
             <p class="section-sub">Placeholders for now — we’ll add links as each artefact is finalized.</p>
           </div>
         </div>
-
-        <div class="weeks">
+        <div class="weeks" id="ixx0xk">
           <!-- 8 weeks generated from course modules -->
-          <article class="card week" aria-labelledby="w1"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 1</p><h4 id="w1">Websites, documents &amp; presentations</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled title="Link coming soon">Add link later</button></article>
-          <article class="card week" aria-labelledby="w2"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 2</p><h4 id="w2">AI‑automated data analysis</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w3"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 3</p><h4 id="w3">GenAI for research &amp; text analysis</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w4"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 4</p><h4 id="w4">Custom GPTs and chatbots</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w5"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 5</p><h4 id="w5">AI for task automation</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w6"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 6</p><h4 id="w6">GenAI for communication &amp; outreach</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w7"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 7</p><h4 id="w7">Capstone project &amp; showcase</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
-          <article class="card week" aria-labelledby="w8"><p class="muted" style="font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Week 8</p><h4 id="w8">Assessment &amp; reflection</h4><p class="muted">Submission link: <em>Pending</em></p><button class="btn" disabled>Add link later</button></article>
+          <article aria-labelledby="w1" class="card week">
+            <p class="muted" id="itzgx4">Week 1</p>
+            <h4 id="w1">Websites, documents &amp; presentations</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled title="Link coming soon" class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w2" class="card week" id="ibj36l">
+            <p class="muted" id="iw0st2">Week 2</p>
+            <h4 id="w2"><a
+                href="https://github.com/akprono-jpg/graph-ai-portfolio/blob/main/Report%20on%20life%20expectancy%20and%20GDP%20in%20the%20world%20in%202020_Bruno%20A.pdf"
+                target="" class="gjs-t-link" id="ikgzwi">AI‑automated data analysis</a></h4>
+          </article>
+          <article aria-labelledby="w2" class="card week" id="iu0o2t">
+            <p class="muted" id="iury34">Week 2</p>
+            <h4 id="w2-2"><a
+                href="https://github.com/akprono-jpg/graph-ai-portfolio/blob/main/Report%20on%20life%20expectancy%20and%20GDP%20in%20the%20world%20in%202020_Bruno%20A.pdf"
+                target="" class="gjs-t-link" id="iw7l0s">AI‑automated data analysis</a></h4>
+          </article>
+          <article aria-labelledby="w3" class="card week">
+            <p class="muted" id="i4xcne">Week 3</p>
+            <h4 id="w3">GenAI for research &amp; text analysis</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w4" class="card week">
+            <p class="muted" id="i056hn">Week 4</p>
+            <h4 id="w4">Custom GPTs and chatbots</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w5" class="card week">
+            <p class="muted" id="i5yxzk">Week 5</p>
+            <h4 id="w5">AI for task automation</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w6" class="card week">
+            <p class="muted" id="ip5ebr">Week 6</p>
+            <h4 id="w6">GenAI for communication &amp; outreach</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w7" class="card week">
+            <p class="muted" id="iv1rgh">Week 7</p>
+            <h4 id="w7">Capstone project &amp; showcase</h4>
+            <p class="muted" id="iix768">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
+          <article aria-labelledby="w8" class="card week">
+            <p class="muted" id="inu02g">Week 8</p>
+            <h4 id="w8">Assessment &amp; reflection</h4>
+            <p class="muted">Submission link: <em>Pending</em></p>
+            <button type="button" disabled class="btn">Add link later</button>
+          </article>
         </div>
       </div>
     </section>
   </main>
-
   <footer role="contentinfo">
     <div class="container">
-      © <span id="year"></span> Bruno Akpakpo — Generative AI for Work & Research. This page intentionally omits direct email to reduce spam.
+      © <span id="year"></span> Bruno Akpakpo — Generative AI for Work &amp; Research. This page intentionally omits
+      direct email to reduce spam.
     </div>
   </footer>
-
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -285,7 +802,8 @@
     const obs = new IntersectionObserver(onIntersect, { rootMargin: '-40% 0px -50% 0px', threshold:[0, .25, .5, .75, 1] });
     sections.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
   </script>
-<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-<script src="https://files.bpcontent.cloud/2025/09/07/17/20250907172402-EHQ7E1YO.js" defer></script>
+  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/09/07/17/20250907172402-EHQ7E1YO.js" defer></script>
 </body>
+
 </html>
