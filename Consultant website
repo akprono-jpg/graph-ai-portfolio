@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr Bruno Akpakpo — Public Health Consultant (RSSH)</title>
+  <meta name="description" content="Dr Bruno Akpakpo — Public Health & Monitoring/Evaluation specialist focused on building resilient, sustainable systems for health (RSSH) across Africa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --ink: #e9eef7;
+      --muted: #b7c0d8;
+      --accent: #8be7ff;
+      --accent-2: #8b5cf6;
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.15);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --radius-sm: 14px;
+      --radius-lg: 26px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    /* Gradient page background */
+    body::before{
+      content:"";position:fixed;inset:-10% -10% auto -10%;height:70vh;z-index:-2;
+      background: radial-gradient(60% 60% at 20% 10%, rgba(139,92,246,.25) 0%, rgba(139,92,246,0) 60%),
+                  radial-gradient(50% 50% at 90% 10%, rgba(139,231,255,.22) 0%, rgba(139,231,255,0) 60%),
+                  radial-gradient(50% 50% at 50% 60%, rgba(56,189,248,.2) 0%, rgba(56,189,248,0) 60%);
+      filter: blur(40px);
+    }
+    header{
+      position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:linear-gradient(180deg, rgba(11,16,32,0.9) 0%, rgba(11,16,32,0.55) 100%);
+      border-bottom:1px solid var(--border);z-index:50
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));box-shadow:0 6px 20px rgba(139,92,246,.45)}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.3px}
+    .nav a{margin-left:18px;font-weight:600;opacity:.9}
+    .nav a:hover{opacity:1}
+    .hero{padding:88px 0 56px}
+    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--glass);border:1px solid var(--border);font-size:12px;color:var(--muted)}
+    h2.title{font-family:"Playfair Display",serif;font-weight:700;font-size:44px;line-height:1.12;margin:18px 0 10px}
+    .lead{font-size:18px;color:var(--muted);line-height:1.7}
+    .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .badge{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:13px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .card{padding:22px}
+    .hero small{color:var(--muted)}
+    /* Sections */
+    section{padding:56px 0}
+    section .head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+    section h3{font-size:26px;margin:0;font-weight:800;letter-spacing:.2px}
+    section p.sub{margin:8px 0 0;color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    /* Cards */
+    .tile{padding:22px;border-radius:var(--radius-sm);background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));border:1px solid var(--border)}
+    .tile h4{margin:0 0 8px;font-size:18px}
+    .tile p{margin:0;color:var(--muted);line-height:1.65}
+    .chip{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:999px;font-size:12px;margin:8px 8px 0 0}
+    /* Timeline */
+    .timeline{position:relative}
+    .timeline::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent), transparent)}
+    .entry{position:relative;padding-left:42px;margin:18px 0}
+    .entry::before{content:"";position:absolute;left:8px;top:8px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+    .entry h5{margin:0 0 6px;font-size:16px}
+    .entry small{color:var(--muted)}
+    /* Footer */
+    footer{padding:40px 0 70px;color:var(--muted)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:var(--glass);font-weight:700}
+    .btn:hover{transform:translateY(-1px)}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      h2.title{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div><h1>Dr Bruno Akpakpo</h1></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#impact">Impact</a>
+        <a href="#publications">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <span class="eyebrow">Director & Public Health Specialist · RSSH</span>
+          <h2 class="title">Building <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Resilient & Sustainable Systems for Health</span> that deliver.</h2>
+          <p class="lead">MD, MPH with 15+ years advancing health outcomes across West, Central and East Africa through systems strengthening, program design, monitoring & evaluation, and evidence‑driven implementation for HIV, TB, malaria, RMNCAH, laboratories, surveillance, community systems and HMIS.</p>
+          <div class="badge-row">
+            <span class="badge">Strategy & Implementation</span>
+            <span class="badge">Monitoring & Evaluation</span>
+            <span class="badge">Integration & Governance</span>
+            <span class="badge">Laboratory & Surveillance</span>
+            <span class="badge">Community Health</span>
+            <span class="badge">Data & Decision‑making</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#expertise">Explore Expertise →</a>
+            <a class="btn" href="#impact">See Impact →</a>
+          </div>
+        </div>
+        <aside class="card">
+          <small>Recent focus</small>
+          <ul style="margin:10px 0 0 18px;line-height:1.7;color:var(--ink)">
+            <li>Accelerating RSSH investments across Africa (labs, HMIS, community, surveillance).</li>
+            <li>Designing integrated service delivery and data triangulation for efficiency.</li>
+            <li>Quality assurance of HFA/QoC/DQR; portfolio reviews & grant making (Global Fund).</li>
+            <li>Technical assistance orchestration and capacity building for implementers.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h3>About me — Director & Public Health Specialist</h3>
+            <p class="sub">Medical doctor (MD) and epidemiologist (MPH) with specialist expertise in program strategy, systems design and M&E for large‑scale infectious disease and health‑systems programs.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="tile">
+            <h4>Credentials</h4>
+            <p>MD (Benin), MPH in Disease Control (ITM Antwerp), Diplomas in Statistics for Medicine (UPMC Paris) and Nutritional Epidemiology (Bordeaux). Native French; fluent English.</p>
+            <div>
+              <span class="chip">MD</span>
+              <span class="chip">MPH (Disease Control)</span>
+              <span class="chip">Epidemiology</span>
+              <span class="chip">Biostatistics</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h4>What I bring</h4>
+            <p>End‑to‑end support from portfolio diagnostics and strategy to execution: policy and governance, program design, budgeting and PF, routine monitoring, supervision, data quality, and continuous improvement.</p>
+          </div>
+          <div class="tile">
+            <h4>How I work</h4>
+            <p>Co‑create actionable plans with country teams and partners; align with national strategies; reinforce government leadership; and cultivate data‑driven decision forums that sustain results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h3>About my expertise</h3>
+            <p class="sub">Systems‑first problem solving across the RSSH building blocks and major disease programs.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="tile">
+            <h4>Resilient & Sustainable Systems for Health (RSSH)</h4>
+            <p>
+              • Systems integration (service delivery, supervision, referral, sample transport)<br/>
+              • HMIS/DHIS2, LMIS/eLMIS, surveillance and analytics; data triangulation<br/>
+              • Laboratory networks, EQA, diagnostics scale‑up; climate & One‑Health linkages<br/>
+              • Community systems & CHWs; governance, SOPs and accountability
+            </p>
+          </div>
+          <div class="tile">
+            <h4>Program Design, M&E and Quality</h4>
+            <p>
+              • Strategic planning, performance frameworks & budgeting (Global Fund)<br/>
+              • HFA/QoC/DQR quality assurance; routine data quality and use<br/>
+              • TA orchestration and capacity building for implementers and ministries<br/>
+              • Operational research and evaluation; grant making and optimization
+            </p>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:20px">
+          <div class="tile"><h4>Technical domains</h4><p>HIV, TB, Malaria; RMNCAH; immunization; nutrition; field epidemiology; eLearning platforms; mass LLIN campaigns; SMC; molecular TB diagnostics.</p></div>
+          <div class="tile"><h4>Tools</h4><p>DHIS2, HMIS/LMIS, R · STATA · SPSS · EpiInfo; grant PF and budgets; dashboards for decision forums.</p></div>
+          <div class="tile"><h4>Partnerships</h4><p>Ministries of Health, Global Fund, UN agencies, INGOs, academia; facilitation of multi‑partner TA that matches country demand.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h3>Selected impact & leadership</h3>
+            <p class="sub">Illustrative engagements highlighting systems strengthening and measurable improvements.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="tile">
+            <h4>Portfolio acceleration (Multi‑country)</h4>
+            <p>Supported acceleration of RSSH investments across Cameroon, Guinea, Liberia, Madagascar, Sierra Leone and Malawi—covering labs, surveillance, HMIS and community systems; strengthened decision‑use of assessments and dashboards.</p>
+          </div>
+          <div class="tile">
+            <h4>Madagascar — Surveillance & CHWs</h4>
+            <p>Advised design of a One‑Health data hub, advanced CHW implementation, initiated climate‑health discussions, and ensured facility assessment results informed grant decisions.</p>
+          </div>
+          <div class="tile">
+            <h4>Guinea — Integration & Quality</h4>
+            <p>Harmonized laboratory TA (LIS, EQA, capacity building); led QA for HFA/QoC/DQR; supported integrated campaigns (LLIN + SMC; EPI + routine nets/ANC chemoprevention).</p>
+          </div>
+          <div class="tile">
+            <h4>Comoros & Eritrea — Program outcomes</h4>
+            <p>Optimized LLIN/IRS strategies in Comoros; used HIV cascade analysis for program improvements in Eritrea; advanced TB molecular testing and contact tracing.</p>
+          </div>
+          <div class="tile">
+            <h4>Benin, Guinea, Niger — M&E leadership</h4>
+            <p>Delivered grant reviews, spot‑checks, DQRs and operational research; strengthened data quality and use at facility and community levels.</p>
+          </div>
+          <div class="tile">
+            <h4>Humanitarian settings</h4>
+            <p>Directed maternal/child health and nutrition programs (ALIMA) with integrated clinical and community components, supply planning, and supervision systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h3>Publications & scientific contributions</h3>
+            <p class="sub">Peer‑reviewed work and conference outputs.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <ul style="margin:0 0 0 18px;line-height:1.8">
+            <li>OptiMA trial, Burkina Faso — simplified, optimized acute malnutrition treatment. <em>British Journal of Nutrition</em>, 2020.</li>
+            <li>Cryptosporidium in severely malnourished children — oral & poster presentations (Pasteur Institute, ASLM, ASTMH), 2016–2017.</li>
+            <li>Alcohol use in Borgou, Benin. <em>Revue Sociologie Santé</em>, 2010.</li>
+            <li>Peer reviewer — <em>Journal of Nutritional Science</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SNAPSHOT -->
+    <section>
+      <div class="wrap">
+        <div class="head"><div><h3>Experience snapshot</h3><p class="sub">A brief timeline of roles supporting programs and systems.</p></div></div>
+        <div class="tile timeline">
+          <div class="entry">
+            <h5>Public Health & M&E Specialist — RSSH Acceleration (Global Fund)</h5>
+            <small>2024–present · WCA, ESA & MENA portfolios</small>
+          </div>
+          <div class="entry">
+            <h5>PHME — Eritrea, Madagascar, Comoros (Global Fund)</h5>
+            <small>2023–2024 · Grant making, PF reviews, acceleration initiatives</small>
+          </div>
+          <div class="entry">
+            <h5>Public Health & M&E Specialist — LFA for Benin & Guinea (Swiss TPH)</h5>
+            <small>2018–2023 · QA of HFA/QoC/DQR, reviews, field audits, OR</small>
+          </div>
+          <div class="entry">
+            <h5>Humanitarian & Research Roles (ALIMA, ISPED, CREC)</h5>
+            <small>2009–2018 · Program leadership, clinical research, evaluations</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="grid-2">
+        <div>
+          <strong>Availability</strong>
+          <p class="sub">Advisory, short‑term technical assistance, portfolio diagnostics, quality assurance, and implementation support.</p>
+        </div>
+        <div>
+          <strong>Languages & location</strong>
+          <p class="sub">French (native), English (fluent). Based in Switzerland; engagements across Africa and globally. Contact available upon request.</p>
+        </div>
+      </div>
+      <p style="margin-top:20px">© <span id="y"></span> Dr Bruno Akpakpo · No email shown to prevent spam.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
